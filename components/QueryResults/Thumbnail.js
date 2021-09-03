@@ -32,7 +32,7 @@ const Thumbnail = forwardRef((props, ref) => {
       <Image
         // className="rounded-3xl"
         layout="responsive"
-        alt={title}
+        alt={title || original_name}
         width={1500}
         height={2000}
         src={url || `${baseUrl}${poster_path}`}
