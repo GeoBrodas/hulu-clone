@@ -1,8 +1,11 @@
 import Header from '@/components/Header/Header';
 import Nav from '@/components/Navigation/Nav';
 import Results from '@/components/QueryResults/Results';
+import UserCard from '@/components/ui/UserCard';
 import requests from '@/utils/requests';
 import Head from 'next/head';
+
+import { getSession } from 'next-auth/client';
 
 function Home(props) {
   // console.log(props.data);
@@ -16,6 +19,7 @@ function Home(props) {
       </Head>
 
       <Header />
+      <UserCard userData={props.session} />
       <Nav />
       <Results data={props.data} />
     </div>
@@ -24,7 +28,18 @@ function Home(props) {
 
 export async function getServerSideProps(context) {
   const genre = context.query.genre;
-  // console.log(context);
+
+  const session = await getSession({ req: context.req });
+  // checks for the incoming request and sees whether a session token is available or not and accordingly takes action
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/auth/signin',
+        permanent: false, // if we want to permanently redirect to auth page or not ?
+      },
+    };
+  }
 
   const request = await fetch(
     `https://api.themoviedb.org/3${
@@ -35,6 +50,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: request.results,
+      session,
     },
   };
 }
