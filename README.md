@@ -1,5 +1,7 @@
 # Hulu Clone 2.0
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Wanted to try out <a href="https://twitter.com/hashtag/nextjs?src=hash&amp;ref_src=twsrc%5Etfw">#nextjs</a> stuff, so I built a <a href="https://twitter.com/hulu?ref_src=twsrc%5Etfw">@hulu</a> clone using <a href="https://twitter.com/tailwindcss?ref_src=twsrc%5Etfw">@tailwindcss</a> in JIT - <br>⚙ Server Side Rendering<br>✨Image Optimization<a href="https://twitter.com/hashtag/100DaysOfCode?src=hash&amp;ref_src=twsrc%5Etfw">#100DaysOfCode</a> <a href="https://t.co/7sQ9AhEYMn">pic.twitter.com/7sQ9AhEYMn</a></p>&mdash; Georgey (@BrodasGeo) <a href="https://twitter.com/BrodasGeo/status/1433827368993316864?ref_src=twsrc%5Etfw">September 3, 2021</a></blockquote>
+
 ## Tech Stack
 
 - NextJS
